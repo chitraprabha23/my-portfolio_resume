@@ -1,0 +1,388 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitra Prabha - Portfolio</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            margin: 20px 40px 0;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            color: #6a3dad;
+            font-size: 40px;
+            letter-spacing: 3px;
+        }
+
+        header p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #333;
+            padding: 18px;
+            margin: 0 40px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 25px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #764ba2;
+            transform: translateY(-3px);
+        }
+
+        /* Main Grid */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #764ba2;
+            padding: 5px;
+            margin-bottom: 20px;
+            transition: 0.4s;
+        }
+
+        .profile:hover {
+            transform: scale(1.08);
+            border-color: #667eea;
+        }
+
+        .profile-card h2 {
+            color: #6a3dad;
+            margin-bottom: 10px;
+        }
+
+        .profile-card h3 {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .profile-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255,255,255,0.95);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .about h2 {
+            text-align: center;
+            color: #6a3dad;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        /* Information Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .info-box {
+            background: #f5f3ff;
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 5px solid #764ba2;
+            transition: 0.3s;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            background: #eeeaff;
+        }
+
+        .info-box b {
+            color: #6a3dad;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Career Goal */
+        .career {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .career h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Skills Section */
+        .skills {
+            margin-top: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            grid-column: 1 / -1;
+        }
+
+        .skills h2 {
+            text-align: center;
+            color: #6a3dad;
+            margin-bottom: 20px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .skill {
+            text-align: center;
+            padding: 15px;
+            background: #f5f3ff;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #6a3dad;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #764ba2;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin: 40px 40px 20px;
+            padding: 20px;
+            background: #333;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            header {
+                margin: 10px;
+            }
+
+            nav {
+                margin: 0 10px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 16px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                margin: 25px auto;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .profile {
+                width: 170px;
+                height: 170px;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Welcome to my personal portfolio</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Grid -->
+    <main class="container">
+
+        <!-- Profile Card -->
+        <div class="profile-card">
+
+            <img src="MY PHOTO.jpeg" class="profile" alt="Chitra Prabha">
+
+            <h2>Chitra Prabha E</h2>
+
+            <h3>MCA Student</h3>
+
+            <p>
+                Passionate about technology and interested in
+                developing creative and useful applications.
+            </p>
+
+        </div>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+
+            <h2>About Me</h2>
+
+            <div class="info-grid">
+
+                <div class="info-box">
+                    <b>Course</b>
+                    MCA
+                </div>
+
+                <div class="info-box">
+                    <b>College</b>
+                    STC, Pollachi
+                </div>
+
+                <div class="info-box">
+                    <b>Email</b>
+                    xyz@gmail.com
+                </div>
+
+                <div class="info-box">
+                    <b>Phone</b>
+                    1234567890
+                </div>
+
+                <div class="info-box">
+                    <b>Location</b>
+                    Coimbatore, Tamil Nadu
+                </div>
+
+                <div class="info-box" id="education">
+                    <b>Education</b>
+                    Master of Computer Applications
+                </div>
+
+            </div>
+
+            <div class="career">
+                <h3>Career Goal</h3>
+                <p>
+                    To become a successful IT professional and
+                    continuously improve my technical and
+                    problem-solving skills.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Skills -->
+        <section class="skills" id="skills">
+
+            <h2>My Skills</h2>
+
+            <div class="skill-grid">
+
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>© 2026 Chitra Prabha E | My Portfolio</p>
+    </footer>
+
+</body>
+</html>
+```
